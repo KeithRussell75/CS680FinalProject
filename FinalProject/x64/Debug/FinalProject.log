@@ -1,0 +1,31 @@
+﻿  camera.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\camera.cpp(26,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Russell Keith\source\repos\FinalProject\camera.cpp(27,14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  engine.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\engine.cpp(110,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Russell Keith\source\repos\FinalProject\engine.cpp(111,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Russell Keith\source\repos\FinalProject\engine.cpp(115,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Russell Keith\source\repos\FinalProject\engine.cpp(116,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Russell Keith\source\repos\FinalProject\engine.cpp(179,23): warning C4244: 'return': conversion from 'double' to 'unsigned int', possible loss of data
+  graphics.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\graphics.cpp(119,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\graphics.cpp(184,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  main.cpp
+  mesh.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\mesh.cpp(100,65): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Russell Keith\source\repos\FinalProject\mesh.cpp(137,65): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Russell Keith\source\repos\FinalProject\mesh.cpp(178,20): warning C4018: '<': signed/unsigned mismatch
+  object.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\object.cpp(73,65): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  shader.cpp
+  sphere.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\sphere.cpp(91,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Texture.cpp
+  window.cpp
+  Generating Code...
+C:\Users\Russell Keith\source\repos\FinalProject\mesh.cpp(195): warning C4715: 'Mesh::loadModelFromFile': not all control paths return a value
+  FinalProject.vcxproj -> C:\Users\Russell Keith\source\repos\FinalProject\x64\Debug\FinalProject.exe
