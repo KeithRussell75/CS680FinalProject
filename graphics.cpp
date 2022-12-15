@@ -78,11 +78,12 @@ bool Graphics::Initialize(int width, int height)
 	// Starship
 	m_mesh = new Mesh(glm::vec3(0.0f, 0.0f, 0.0f), "C:\\Users/Russell Keith/source/repos/Keith-PA5/assets/SpaceShip-1.obj", "C:\\Users/Russell Keith/source/repos/Keith-PA5/assets/SpaceShip-1.png");
 	ogModel = m_mesh->GetModel();
-	// The Sun
-	m_sphere = new Sphere(68, "C:\\Users/Russell Keith/source/repos/Keith-PA5/assets/2k_sun.jpg");
 
-	// The Earth
-	m_sphere2 = new Sphere(45, "C:\\Users/Russell Keith/source/repos/Keith-PA5/assets/2k_earth_daymap.jpg");
+	// The Sun
+	m_sphere = new Sphere(68, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/Planetary Textures/2k_sun.jpg");
+
+	// Mucuary
+	m_sphere2 = new Sphere(45, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/Planetary Textures/Mercury.jpg");
 	
 	// The moon
 	m_sphere3 = new Sphere(45, "C:\\Users/Russell Keith/source/repos/Keith-PA5/assets/2k_moon.jpg");
@@ -107,12 +108,12 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	modelStack.push(glm::translate(glm::mat4(1.f), glm::vec3(0, 0, 0)));  // sun's coordinate
 	localTransform = modelStack.top();		// The sun origin
 	localTransform *= glm::rotate(glm::mat4(1.0f), (float)dt, glm::vec3(0.f, 1.f, 0.f));
-	localTransform *= glm::scale(glm::vec3(.75, .75, .75));
+	localTransform *= glm::scale(glm::vec3(2, 2, 2));
 	if (m_sphere != NULL)
 		m_sphere->Update(localTransform);
 
 	// position of the mesh
-	speed = { 0.0, 1.0, 1.0 };
+	speed = { 0.0, 0.0, 0.0 };
 	dist = { 0.0, 3.0, 3.0 };
 	rotVector = { 1.0, 0.0, 0.0 };
 	rotSpeed = { -1., 1., 1. };
@@ -127,8 +128,8 @@ void Graphics::HierarchicalUpdate2(double dt) {
 		m_mesh->Update(localTransform);
 		modelStack.pop();						//pop mesh's corrdinates
 
-	// position of the first planet
-	speed = { -.5, -.5, -.5 };
+	// position of Mercary
+	speed = { -.0, -.0, -.0 };
 	dist = { 6., 0, 6. };
 	rotVector = { 0.0, -1. ,0.0 };
 	rotSpeed = { 1., 1., 1. };
@@ -142,8 +143,8 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	if (m_sphere2 != NULL)
 		m_sphere2->Update(localTransform);
 
-	// position of the first moon
-	speed = { 2, 1.5, 2 };
+	// position of the Mercury first moon
+	speed = { 0, 0.0, 0 };
 	dist = { 1.25, 1.25 , 1.25 };
 	rotVector = { 0., 1., 0. };
 	rotSpeed = { 0, 2., 0 };
@@ -190,6 +191,8 @@ void Graphics::Render()
 	// Send in the projection and view to the shader (stay the same while camera intrinsic(perspective) and extrinsic (view) parameters are the same
 	glUniformMatrix4fv(m_projectionMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetProjection()));
 	glUniformMatrix4fv(m_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView()));
+
+	Light lighter(m_viewMatrix);
 
 	// Render the objects
 	/*if (m_cube != NULL){
