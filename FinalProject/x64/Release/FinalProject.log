@@ -1,0 +1,10 @@
+﻿  sphere.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\sphere.cpp(98,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+soil2-debug.lib(SOIL2.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  5 of 687 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  FinalProject.vcxproj -> C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\x64\Release\FinalProject.exe

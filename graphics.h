@@ -12,6 +12,8 @@ using namespace std;
 #include "sphere.h"
 #include "mesh.h"
 #include "light.h"
+#include "skybox.h"
+#include "SkyboxShader.h"
 
 #define numVBOs 2;
 #define numIBs 2;
@@ -24,7 +26,9 @@ class Graphics
     ~Graphics();
     bool Initialize(int width, int height);
     void HierarchicalUpdate2(double dt);
+    void RenderPlanet(Sphere* planet);
     void Render();
+    void AddUpdateMoonPlanet(Sphere* ufo,bool planet, std::vector<float> Speed, std::vector<float> Dist, glm::vec3 RotVector, std::vector<float> RotSpeed, std::vector<float> Scale, double dt);
 
     Camera* getCamera() { return m_camera; }
 
@@ -40,24 +44,45 @@ class Graphics
 
     Camera *m_camera;
     Shader *m_shader;
+    skyshader *m_skyshader;
 
     GLint m_projectionMatrix;
     GLint m_viewMatrix;
     GLint m_modelMatrix;
+    GLint m_normalMatrix;
     GLint m_positionAttrib;
-    GLint m_colorAttrib;
+    GLint m_normalAttrib;
     GLint m_tcAttrib;
     GLint m_hasTexture;
 
-    //Light* lighter;
 
-    Sphere* m_sphere;
-    Sphere* m_sphere2;
-    Sphere* m_sphere3;
+    Sphere* Sun;
+    Sphere* Mercury;
+    Sphere* Venus;
+    Sphere* Earth;
+    Sphere* Moon;
+    Sphere* Mars;
+    Sphere* Jupiter;
+    Sphere* IO;
+    Sphere* Europa;
+    Sphere* Ganymede;
+    Sphere* Callisto;
+    Sphere* Saturn;
+    Sphere* Mimas;
+    Sphere* Enceladus;
+    Sphere* Titan;
+    Sphere* Uranus;
+    Sphere* Neptune;
+    Sphere* Ceres;
+    Sphere* Eris;
+    Sphere* Haumea;
+
+    skybox* galaxy;
+
+    Light* m_light;
 
     Mesh* m_mesh;
-    glm::mat4 ogModel;
-    glm::mat4 ogMoon;
+    glm::mat4 ogMesh;
 
 
 };

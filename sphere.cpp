@@ -17,33 +17,48 @@ Sphere::Sphere(int prec) { // prec is precision, or number of slices
     hasTex = false;
 }
 
-Sphere::Sphere(int prec, const char* fname) { // prec is precision, or number of slices
+Sphere::Sphere(int prec,float angle, const char* fname, int tex, float matA[], float matD[], float matS[], float matsh) { // prec is precision, or number of slices
 
     init(prec);
     setupVertices();
     setupBuffers();
-    setupModelMatrix(glm::vec3(0., 0., 0.), 45.0, 1.);
+    setupModelMatrix(glm::vec3(0., 0., 0.), toRadians(angle), 1.);
 
+    for (int i = 0; i < 4; i++) {
+        matAmbient[i] = matA[i];
+        matDiff[i] = matD[i]; 
+        matSpec[i] = matS[i];
+    }
+    matShininess = matsh;
+
+    ogmodel = model;
         // load texture from file
     m_texture = new Texture(fname);
     if (m_texture)
-        hasTex = true;
-    else
+        if (tex == DIFFUSE_TEXTURE) {
+            hasTex = true;
+        }
+        else {
+            hasNorm = true;
+        }
+    else {
         hasTex = false;
+        hasNorm = false;
+    }
 }
 
 
-void Sphere::Render(GLint positionAttribLoc, GLint colorAttribLoc)
+void Sphere::Render(GLint positionAttribLoc, GLint normalAttribLoc)
 {
     //glBindVertexArray(vao);
     // Enable Vertext Attributes
     glEnableVertexAttribArray(positionAttribLoc);
-    glEnableVertexAttribArray(colorAttribLoc);
+    glEnableVertexAttribArray(normalAttribLoc);
 
     // Bind your VBO buffer(s) and then setup vertex attribute pointers
     glBindBuffer(GL_ARRAY_BUFFER, VB);
     glVertexAttribPointer(positionAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-    glVertexAttribPointer(colorAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
+    glVertexAttribPointer(normalAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
  
 
     // Bind your index buffer
@@ -54,15 +69,15 @@ void Sphere::Render(GLint positionAttribLoc, GLint colorAttribLoc)
 
     // Disable Vertex Attribuates
     glDisableVertexAttribArray(positionAttribLoc);
-    glDisableVertexAttribArray(colorAttribLoc);
+    glDisableVertexAttribArray(normalAttribLoc);
 }
 
-void Sphere::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc, GLint hasTextureLoc)
+void Sphere::Render(GLint posAttribLoc, GLint normalAttribLoc, GLint tcAttribLoc, GLint hasTextureLoc)
 {
     glBindVertexArray(vao);
     // Enable vertex attibute arrays for each vertex attrib
     glEnableVertexAttribArray(posAttribLoc);
-    glEnableVertexAttribArray(colAttribLoc);
+    glEnableVertexAttribArray(normalAttribLoc);
     glEnableVertexAttribArray(tcAttribLoc);
 
     // Bind your VBO
@@ -71,7 +86,7 @@ void Sphere::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc, G
     // Set vertex attribute pointers to the load correct data. Update here to load the correct attributes.
     glVertexAttribPointer(posAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
     glVertexAttribPointer(tcAttribLoc, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texcoord));
-    glVertexAttribPointer(colAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
+    glVertexAttribPointer(normalAttribLoc, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
 
 
     // If has texture, set up texture unit(s): update here for texture rendering
@@ -92,11 +107,10 @@ void Sphere::Render(GLint posAttribLoc, GLint colAttribLoc, GLint tcAttribLoc, G
 
     // Disable vertex arrays
     glDisableVertexAttribArray(posAttribLoc);
-    glDisableVertexAttribArray(colAttribLoc);
+    glDisableVertexAttribArray(normalAttribLoc);
     glDisableVertexAttribArray(tcAttribLoc);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
-
 
 void Sphere::setupVertices() {
     std::vector<int> ind = getIndices();
@@ -111,7 +125,6 @@ void Sphere::setupVertices() {
     }
 
 }
-
 
 void Sphere::setupBuffers() {
     // For OpenGL 3
@@ -172,6 +185,15 @@ void Sphere::init(int prec) {
             indices[6 * (i * prec + j) + 4] = (i + 1) * (prec + 1) + j + 1;
             indices[6 * (i * prec + j) + 5] = (i + 1) * (prec + 1) + j;
         }
+    }
+}
+
+GLuint Sphere::getTextureID(int tex) {
+    if (tex == DIFFUSE_TEXTURE) {
+        return m_TextureID;
+    }
+    else if (tex == NORMAL_TEXTURE) {
+        return m_NormalTextureID;
     }
 }
 

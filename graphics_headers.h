@@ -8,6 +8,8 @@
 
 #define GL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED
 #define GLM_ENABLE_EXPERIMENTAL 
+#define DIFFUSE_TEXTURE 1
+#define NORMAL_TEXTURE 2
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

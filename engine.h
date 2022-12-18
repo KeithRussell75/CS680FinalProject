@@ -5,6 +5,7 @@
 #include <assert.h>
 #include "window.h"
 #include "graphics.h"
+//#include "skybox.h"
 
 static void cursorPositionCallBack(GLFWwindow*, double xpos, double ypos);
 
@@ -42,6 +43,7 @@ class Engine
     Graphics *m_graphics;
 
     bool m_running;
+    //skybox* galaxy;
 };
 
 #endif // ENGINE_H
