@@ -233,7 +233,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	}
 
 	// position of Mercury
-	speed = { -0.0, -0.0, 0.0 };
+	speed = { -0.75, -0.75, 0.75 };
 	dist = { 3.0, 0.0, 3.0 };
 	rotVector = { 0.0, 1.0, 0.0 };
 	rotSpeed = { -1., 0.075, -1. };
@@ -243,7 +243,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 
 	// position of Venus
-	speed = { -0.0, -0.0, -0.0 };
+	speed = { -0.5, -0.5, -0.5 };
 	dist = { 7.0, 0.0, 7.0 };
 	rotVector = { 0., -1., 0.0 };
 	rotSpeed = { -1.0, -.5, 1.0 };

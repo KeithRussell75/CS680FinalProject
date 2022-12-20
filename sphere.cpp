@@ -95,11 +95,11 @@ void Sphere::Render(GLint posAttribLoc, GLint normalAttribLoc, GLint tcAttribLoc
         glBindTexture(GL_TEXTURE_2D, m_texture->getTextureID());
     }
     else
-        glUniform1i(hasTextureLoc, false);
+        //glUniform1i(hasTextureLoc, false);
 
     if (!m_NormalTextureID) {
         glUniform1i(hasTextureLoc, true);
-        glActiveTexture(GL_TEXTURE4);
+        glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, m_NormalTextureID);
     }
 
