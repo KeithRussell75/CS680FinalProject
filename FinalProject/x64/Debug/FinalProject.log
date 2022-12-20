@@ -1,2 +1,104 @@
-﻿  skybox.cpp
+﻿  graphics.cpp
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(146,197): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(154,196): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(223,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(239,31): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(240,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(256,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(268,30): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(275,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(285,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(288,29): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(297,30): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(305,30): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(313,30): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(321,30): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(329,29): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(332,30): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(349,30): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(356,29): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(365,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(374,27): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(383,27): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\graphics.cpp(392,26): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
   FinalProject.vcxproj -> C:\Users\Russell Keith\source\repos\FinalProject\CS680FinalProject\x64\Debug\FinalProject.exe

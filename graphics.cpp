@@ -120,26 +120,31 @@ bool Graphics::Initialize(int width, int height)
 	// The Sun
 	Sun = new Sphere(85, 0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/2k_sun.jpg",DIFFUSE_TEXTURE, matAmbient, matDiff, matSpec, matShininess);
 	
-	float matAmbient2[4] = { 5., 5.0, 5.0, 5.0 };
+	float matAmbient2[4] = { 8., 8.0, 8.0, 8.0 };
 	float matDiff2[4] = { 2.0, 2., 2., 1.0 };
-	float matSpec2[4] = { 10.0, 10.0, 10.0, 1.0 };
-	float matShininess2 = 20.0;
+	float matSpec2[4] = { 5.0, 5.0, 5.0, 1.0 };
+	float matShininess2 = 10.0;
 	//Mercury
 	Mercury = new Sphere(68, 0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Mercury.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
-	
+	Mercury->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Mercury-n.jpg");
+
+
 	//Venus
 	Venus = new Sphere(45,0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Venus.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
+	Venus->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Venus-n.jpg");
 
 	// The Earth
 	Earth = new Sphere(45,-23.5, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/2k_earth_daymap.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
+	Earth->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/2k_earth_daymap-n.jpg");
 	// The moon
 	Moon = new Sphere(45, 0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/2k_moon.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
-
+	Moon->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/2k_moon-n.jpg");
 	// Mars
 	Mars = new Sphere(45,25, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Mars.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
-	
+	Mars->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Mars-n.jpg");
 	//Jupiter
 	Jupiter = new Sphere(45,3.13, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Jupiter.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
+	Jupiter->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Jupiter-n.jpg");
 	IO = new Sphere(45, 0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/IO.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
 	Europa = new Sphere(45, 0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Europa.png", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
 	Ganymede = new Sphere(45, 0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Ganymede.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
@@ -147,21 +152,27 @@ bool Graphics::Initialize(int width, int height)
 	
 	//Saturn
 	Saturn = new Sphere(45,26.73, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Saturn.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
+	//Saturn->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Saturn-n.jpg");
 	//auto error3 = glGetError();
 	//Mimas = new Sphere(45, 26.73, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Mimas.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
-	//auto error4 = glGetError();
+	
 	Enceladus = new Sphere(45, 0.0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Enceladus.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
-	//auto error5 = glGetError();
+	
 	//Uranus
 	Uranus = new Sphere(45,98, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Uranus.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
+	Uranus->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Uranus-n.jpg");
 
 	//Neptune
 	Neptune = new Sphere(45,28, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Neptune.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
-	
+	Neptune->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Neptune-n.jpg");
+
 	Haumea = new Sphere(45,0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Haumea.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
+	Haumea->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Haumea-n.jpg");
 	Ceres = new Sphere(45,0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Ceres.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
+	Ceres->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Ceres-n.jpg");
 	Eris = new Sphere(45,0, "C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Eris.jpg", DIFFUSE_TEXTURE, matAmbient2, matDiff2, matSpec2, matShininess2);
-	
+	Eris->loadnormal("C:\\Users/Russell Keith/source/repos/FinalProject/CS680FinalProject/PlanetaryTextures/Eris-n.jpg");
+
 	galaxy = new skybox();
 
 	//enable depth testing
@@ -222,7 +233,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 	}
 
 	// position of Mercury
-	speed = { -.75, -75, -.75 };
+	speed = { -0.0, -0.0, 0.0 };
 	dist = { 3.0, 0.0, 3.0 };
 	rotVector = { 0.0, 1.0, 0.0 };
 	rotSpeed = { -1., 0.075, -1. };
@@ -232,7 +243,7 @@ void Graphics::HierarchicalUpdate2(double dt) {
 
 
 	// position of Venus
-	speed = { -0.5, -0.5, -0.5 };
+	speed = { -0.0, -0.0, -0.0 };
 	dist = { 7.0, 0.0, 7.0 };
 	rotVector = { 0., -1., 0.0 };
 	rotSpeed = { -1.0, -.5, 1.0 };
@@ -429,7 +440,7 @@ void Graphics::RenderPlanet(Sphere* planet) {
 	GLuint mShineLoc = glGetUniformLocation(m_shader->GetShaderProgram(), "material.shininess");
 	glProgramUniform1f(m_shader->GetShaderProgram(), mShineLoc, planet->matShininess);
 
-
+	GLuint hasN = m_shader->GetUniformLocation("hasN");
 	if (planet != NULL) {
 		GLuint hasN = m_shader->GetUniformLocation("hasNormalMap");
 		//glUniform1i(m_hasTexture, false);
@@ -449,9 +460,25 @@ void Graphics::RenderPlanet(Sphere* planet) {
 			glUseProgram(m_shader->GetShaderProgram());
 			glUniform1i(sampler, 0);
 			glUniform1i(hasN, false);
-			planet->Render(m_positionAttrib, m_normalAttrib, m_tcAttrib, m_hasTexture);
+			//planet->Render(m_positionAttrib, m_normalAttrib, m_tcAttrib, m_hasTexture);
 		}
-	}
+
+		if (planet->hasNorm) {
+			glActiveTexture(GL_TEXTURE4);
+			glBindTexture(GL_TEXTURE_2D, planet->getTextureID(NORMAL_TEXTURE));
+			GLuint sampler = m_shader->GetUniformLocation("samp1");
+			if (sampler == INVALID_UNIFORM_LOCATION)
+			{
+				printf("Sampler Not found not found\n");
+			}
+			glUseProgram(m_shader->GetShaderProgram());
+			glUniform1i(sampler, 1);
+			glUniform1i(hasN, true);
+			//planet->Render(m_positionAttrib, m_normalAttrib, m_tcAttrib, m_hasTexture);
+		}
+		planet->Render(m_positionAttrib, m_normalAttrib, m_tcAttrib, m_hasTexture);
+	}	
+
 }
 
 
@@ -491,6 +518,11 @@ void Graphics::Render()
 			m_mesh->Render(m_positionAttrib, m_normalAttrib, m_tcAttrib, m_hasTexture);
 		}
 	}
+	glm::vec3 currentLightPos = { 5.0, 5.0, 5.0 };
+
+	glm::mat4 view = m_camera->GetView();
+	m_light = new Light(view, currentLightPos);
+
 
 	RenderPlanet(Sun);
 	RenderPlanet(Mercury);
@@ -581,11 +613,10 @@ bool Graphics::collectShPrLocs() {
 	}
 
 
-	glm::vec3 currentLightPos = { 0.0, 0.0, 0.0 };
+	glm::vec3 currentLightPos = { 5.0, 5.0, 5.0 };
 
 	glm::mat4 view = m_camera->GetView();
-	m_light = new Light(view, currentLightPos);// , lightAmbient, lightDiffuse, lightSpecular, globalAmbient);
-
+	m_light = new Light(view, currentLightPos);
 
 	//globalAmbient
 	GLuint globalAmbLoc = glGetUniformLocation(m_shader->GetShaderProgram(), "GlobalAmbient");

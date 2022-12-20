@@ -63,7 +63,6 @@ bool Shader::AddShader(GLenum ShaderType)
           uniform mat4 modelMatrix; \
           uniform mat3 normMatrix; \
           \
-          uniform bool skybox; \
           \
           layout (binding = 0) uniform sampler2D samp; \
           layout (binding = 1) uniform sampler2D samp1; \
@@ -74,12 +73,7 @@ bool Shader::AddShader(GLenum ShaderType)
           void main(void) \
           { \
             vec4 v = vec4(v_position, 1.0); \
-            if(skybox) \
-                gl_Position = (projectionMatrix * viewMatrix * modelMatrix) * v; \
-            \
-            else \
-                gl_Position = (projectionMatrix * viewMatrix * modelMatrix) * v; \
-            \
+            gl_Position = (projectionMatrix * viewMatrix * modelMatrix) * v; \
             tc = texCoord;\
             varPos = ((viewMatrix * modelMatrix) * vec4(v_position,1.0f)).xyz; \
             varLdir = light.position - varPos; \
@@ -98,7 +92,6 @@ bool Shader::AddShader(GLenum ShaderType)
           in vec2 tc; \
           \
           uniform bool hasN; \
-          uniform bool skybox; \
           \
           layout (binding = 0) uniform sampler2D samp; \
           layout (binding = 1) uniform sampler2D samp1; \
@@ -140,11 +133,7 @@ bool Shader::AddShader(GLenum ShaderType)
             vec3 amb = ((GlobalAmbient) + (texture(samp,tc)*light.ambient * material.ambient)/1).xyz; \
             vec3 dif = light.diffuse.xyz * material.diffuse.xyz * texture(samp,tc).xyz * max(0.0, cosTheta); \
             vec3 spc = light.spec.xyz* material.spec.xyz*pow(max(0.0, cosPhi), material.shininess); \
-            if(skybox) \
-                frag_color = texture(samp, tc); \
-            \
-            else\
-                frag_color = vec4(amb + dif + spc, 1); \
+            frag_color = vec4(amb + dif + spc, 1); \
             \
            }\
           ";

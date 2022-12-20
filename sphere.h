@@ -27,6 +27,8 @@ public:
     std::vector<glm::vec3> getNormals();
 
     GLuint getTextureID(int Tex); //{ return m_texture->getTextureID(); }
+    void loadnormal(const char* fname);
+
 
     float matAmbient[4];
     float matDiff[4]; 

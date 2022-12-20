@@ -47,7 +47,6 @@ Sphere::Sphere(int prec,float angle, const char* fname, int tex, float matA[], f
     }
 }
 
-
 void Sphere::Render(GLint positionAttribLoc, GLint normalAttribLoc)
 {
     //glBindVertexArray(vao);
@@ -98,6 +97,12 @@ void Sphere::Render(GLint posAttribLoc, GLint normalAttribLoc, GLint tcAttribLoc
     else
         glUniform1i(hasTextureLoc, false);
 
+    if (!m_NormalTextureID) {
+        glUniform1i(hasTextureLoc, true);
+        glActiveTexture(GL_TEXTURE4);
+        glBindTexture(GL_TEXTURE_2D, m_NormalTextureID);
+    }
+
 
     // Bind your Element Array
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
@@ -146,6 +151,19 @@ void Sphere::setupModelMatrix(glm::vec3 pivot, float angle, float scale) {
     model = glm::translate(glm::mat4(1.0f), pivotLocation);
     model *= glm::rotate(glm::mat4(1.f), angle, glm::vec3(0., 1., 1.));
     model *= glm::scale(glm::vec3(scale, scale, scale));
+}
+
+void Sphere::loadnormal(const char* fname) {
+    m_NormalTextureID = SOIL_load_OGL_texture(fname, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    if (!m_NormalTextureID) {
+        std::cout<< "could not open normal file" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    hasNorm = true;
+    glGenerateMipmap(GL_TEXTURE_2D);
+    glTexParameteri(GL_TEXTURE_2D,
+        GL_TEXTURE_MIN_FILTER,
+        GL_LINEAR_MIPMAP_LINEAR);
 }
 
 void Sphere::Update(glm::mat4 matModel) {
